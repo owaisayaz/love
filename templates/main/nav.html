@@ -1,0 +1,41 @@
+{% load static %}
+
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand text-danger fw-bold" href="#">LOVE <i class="text-success fw-bold">& PEACE</i> <br /><i
+          class="fw-normal"></i>
+        HOME STAY
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-grid-fill text-dark"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-3 text">
+          <li class="nav-item">
+            <a class="nav-link active text-dark" aria-current="page" href="{% url 'home' %}">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" aria-current="page" href="#">WHY CHOOSE US</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" aria-current="page" href="{% url 'about' %}">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" aria-current="#" href="#">WHAT WE OFFER</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" aria-current="#" href="{% url 'contact' %}">CONTACT US</a>
+          </li>
+          <li class="nav-item ms-5 ps-5">
+            <a href="#inquiry" class="btn btn-light" aria-current="page"  style="
+                  background-color: #dc4141;
+                  border-radius: 20px;
+                  color: white;
+                ">ENQUIRY NOW</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

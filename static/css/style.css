@@ -1,0 +1,127 @@
+.nav-item {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color: white;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-brand {
+      margin-left: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .btn.btn-light {
+      margin-left: -5.1rem !important;
+    }
+  }
+
+  .d-block.img {
+    width: 100%;
+    object-fit: cover;
+    height: 480px;
+  }
+
+  .nav-link {
+    font-weight: 100%;
+    color: black;
+
+  }
+
+  .nav-link:hover {
+    color: black;
+  }
+
+  .card .img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+
+  .btn2 {
+    background-color: #dc4141;
+    border-radius: 20px;
+    color: white;
+    font-weight: 400;
+    margin-left: 30px;
+    padding: 6px 15px;
+    text-decoration: none;
+    font-size: 10px;
+  }
+
+  .btn2:hover {
+    color: white;
+    background-color: #d95454;
+  }
+
+  .abc {
+    margin-left: -40px;
+  }
+
+  .icon-image {
+    height: 30px;
+    font-size: 25px;
+    /* border: 3px solid black; */
+    /* padding: 40px; */
+    border-radius: 50%;
+    margin-top: 2rem;
+    /* margin-left: 40px; */
+    margin-bottom: 20px;
+  }
+
+  .icon-image:hover {
+    border: 3px solid orange;
+    color: white;
+    background-color: orange;
+  }
+
+  .icon-ee {
+    height: 115px;
+    border: 3px solid black;
+    padding: 40px;
+    border-radius: 50%;
+    margin-top: 28px;
+    /* margin: 30px; */
+    line-height: 30px;
+    /* margin-left: 10px; */
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
+  .icon-ee:hover {
+    border: none;
+    color: white;
+    background-color: #d95454;
+  }
+
+  .abc {
+    font-size: 15px;
+    color: gray;
+    /* padding-right: 20%; */
+  }
+
+  .btn-danish {
+    background-color: red;
+  }
+
+  .btn-danish:hover {
+    background-color: #d95454;
+  }
+
+  .net {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .img-fluid {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .customer {
+    height: 50px;
+  }
+
+  

@@ -1,0 +1,785 @@
+{% extends 'frontend.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love & Peace</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!--CSS SWIPER-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.0.6/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+</head>
+<style>
+    .card {
+        /* border-radius: 25px; */
+        border-radius: 0px !important;
+
+
+        /* max-height: 500px !important; */
+    }
+
+
+    .slide-content {
+        margin: 0 40px;
+        padding: 45px 20px;
+        overflow: hidden;
+    }
+
+    .image-content,
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 14px;
+    }
+
+
+
+    .button:hover {
+        background-color: #bebd00;
+    }
+
+    .swiper-navBtn {
+        transition: color 0.5s ease;
+    }
+
+    .swiper-navBtn::before,
+    .swiper-navBtn::after {
+        font-size: 20px;
+    }
+
+    .swiper-button-next {
+        right: 0 !important;
+        color: #bebd00 !important;
+    }
+
+    .swiper-button-next:hover {
+        color: #004754 !important;
+    }
+
+    .swiper-button-prev {
+        left: 0 !important;
+        color: #bebd00 !important;
+    }
+
+    .swiper-button-prev:hover {
+        color: #004754 !important;
+    }
+
+    .swiper-pagination-bullet {
+        background-color: #000000 !important;
+        opacity: 1 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #bebd00 !important;
+    }
+
+    .swiper-pagination-bullet {
+        color: #ffffff !important;
+    }
+
+
+    .bg-gradient {
+        background: rgb(0, 0, 0);
+        /* background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 100%); */
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    }
+
+    @media screen and (max-width: 768px) {
+        .slide-content {
+            margin: 0 10px;
+        }
+
+        .swiper-navBtn {
+            display: none !important;
+        }
+    }
+</style>
+<style>
+    .bg-gradient {
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)) !important;
+    }
+
+    .card-img-overlayy {
+        position: absolute;
+        top: 0;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+
+    .add {
+        font-weight: bold;
+        font-size: 10px;
+
+    }
+
+    /* Mobile styles */
+    @media (max-width: 500px) {
+        .card.bg-danger.carder{
+            margin-top: 12px;
+        }
+        .card-body{
+           padding: 0px;
+        }
+
+    }
+
+    
+</style>
+<style>
+    .cardd-imgss-top {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    .btn2 {
+        background-color: #dc4141;
+        border-radius: 20px;
+        color: white;
+        font-weight: 400;
+        margin-left: 30px;
+        padding: 6px 15px;
+        text-decoration: none;
+        font-size: 10px;
+    }
+</style>
+
+<style>
+    #index {
+        border-radius: 20px;
+        color: brown;
+    }
+    
+    .card1 {
+        margin-right: 100px;
+    }
+    
+    #text {
+        font-size: 35px;
+    }
+    
+    .form-label {
+        font-size: 14px;
+        color: aliceblue;
+        font-weight: bold;
+    }
+    
+    .form-control {
+        padding: 15px 20px;
+        border-radius: 10px;
+    }
+    
+    #button {
+        border-radius: 16px;
+        padding: 10px 17px;
+        font-weight: bold;
+    }
+    
+    
+    .card-text {
+        font-size: 20px;
+        padding-left: 25px;
+    }
+    
+    .card-title {
+        padding-left: 25px;
+    }
+    
+    .mmmnn {
+        width: 100%;
+        height: 270px;
+        padding: 0;
+        border-top-left-radius: 1rem !important;
+        border-bottom-left-radius: 1rem !important;
+    }
+    
+    
+    @media (max-width: 576px) {
+        .row {
+            padding: 5px;
+            margin-bottom: 2px;
+        }
+    
+        .card-title {
+            font-size: 1.2rem;
+        }
+    
+        .card-text {
+            font-size: 1rem;
+    
+        }
+    
+        .btn {
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            gap: 0;
+        }
+    
+        .mmmnn {
+            height: 10rem;
+            border-top-right-radius: 1rem !important;
+            border-bottom-right-radius: 1rem !important;
+        }
+    
+        .adder {
+            height: 13rem;
+            padding: 0;
+        }
+    
+        .second {
+            height: 7rem;
+            border-bottom-left-radius: 1rem;
+        }
+    }
+    
+    #btn {
+        padding: 5px 15px;
+        border-radius: 13px;
+    }
+    
+    #danger {
+        padding: 5px 29px;
+        border-radius: 13px;
+    
+    }
+    
+    .card-img {
+        object-fit: cover;
+        max-width: 100%;
+        height: 100%;
+        max-height: 270px;
+    }
+    
+    .card-img-overlay {
+        position: absolute;
+        top: 20px;
+    }
+    
+    .imgs {
+        width: 100%;
+        height: 330px;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+    
+    .btnn {
+        border-radius: 17px;
+        padding: 9px 18px;
+        color: red;
+        font-weight: bold;
+    }
+    
+    .card-img-top {
+        width: 100%;
+        height: 500px;
+        border-radius: 25px;
+        object-fit: cover;
+    }
+    
+    .cardd {
+        height: 500px;
+        border-radius: 25px !important;
+    }
+    
+    .card-img-overlayy {
+        position: absolute;
+        box-sizing: border-box;
+        top: 60px;
+        left: 15px;
+    }
+    
+    .enquiry {
+        padding: 9px 17px;
+        border-radius: 24px;
+        font-size: 16px;
+    
+    }
+    
+    .borderr {
+        border: 2px;
+        background-color: rgba(255, 255, 255, 0.507);
+    
+        border-radius: 26px;
+    }
+    
+    .bi-alarm {
+        color: brown;
+    }
+    
+    .bi-person {
+        color: brown;
+    }
+    
+    .bi-geo-alt {
+        color: brown;
+    }
+    
+</style>
+
+<body>
+
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/577122212.jpg?k=2830e0a21b33c3d38f41ac1e39e477f99e8b017e0646b1a2e7c87d29948a1495&o=&hp=1"
+                    class="d-block img" style="object-fit: cover;" />
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.ytimg.com/vi/WRfcPoBJb6o/maxresdefault.jpg" class="d-block img"
+                    style="object-fit: cover;" />
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.ytimg.com/vi/Q8Y1VEjWJms/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBKQxtUtT_BZUj3kjdWl1M2QGpjYQ"
+                    class="d-block img" style="object-fit: cover;" />
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <div class="container mt-3 bg-light my-5" id="index">
+
+        <div class="row justify-content-center align-items-center g-0">
+            <div class="col-lg-3 col-md-6 col-12 fst-italic text-center text-lg-start ps-lg-5" id="text">
+                <p>Book Your</p>
+                <p>Perfect</p>
+                <p>Stay <i class="bi bi-check-circle"></i></p>
+            </div>
+
+            <div class="col-lg-7 col-md-6 col-12 my-4 px-3 " id="inquiry">
+                <div class="card bg-danger text-light" style="border-radius:20px !important;">
+                    <div class="card-body">
+                        <div class="row justify-content-center pt-2">
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="validationCustom01" class="form-label">FULL NAME*</label>
+                                <input type="text" class="form-control" id="validationCustom01" value="" required>
+                            </div>
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="validationCustom02" class="form-label">EMAIL ID*</label>
+                                <input type="email" class="form-control" id="validationCustom02" value="" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="validationCustom03" class="form-label">PHONE NO.*</label>
+                                <input type="text" class="form-control" id="validationCustom03" value="" required>
+                            </div>
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="validationCustom04" class="form-label">BOOKING DATE*</label>
+                                <input type="email" class="form-control" id="validationCustom04" value="" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col text-center mt-4">
+                                <button type="button" class="btn btn-light text-danger" id="button">ENQUIRY
+                                    NOW</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-fluid my-5" id="success">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-10 p-2">
+
+                <div class="row justify-content-center border p-0 mb-3" style="border-radius: 1rem !important;">
+                    <div class="col-12 col-md-4 col-lg-3 col-sm-4 p-0"
+                        style="border-top-left-radius: 1rem !important; border-bottom-left-radius: 1rem !important;">
+                        <img src="/static/images/travel-1677347_640.jpg" class="mmmnn img-fluid" alt="">
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-6 col-sm-4 adder">
+                        <div class="text-start my-1 g-0">
+                            <h4 class="card-title fw-bold m-2">Deluxe Room City/Fort View</h4>
+                            <p class="card-text m-2">Guest up to 2</p>
+                            <p class="card-text m-2">26 sq mt</p>
+                            <p class="card-text m-2">Attached Washroom</p>
+                            <p class="card-text m-2">TV, Hair dryer, Press</p>
+                            <p class="fw-bolder text-lg-end m-4"><i class="bi bi-currency-rupee"></i> 6,350*</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3 col-sm-4 bg-success d-flex flex-column align-items-center justify-content-center text-center second"
+                        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+                        <div class="col-md-12 mb-2">
+                            <a href="#inquiry" class="btn btn-danger m-3 " id="btn">ENQUIRY NOW</a>
+                        </div>
+                        <div class="col-md-12">
+                            <a href="https://wa.me/" class="btn btn-danger m-3" id="danger">WHATSAPP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center border p-0 mb-4" style="border-radius: 1rem !important;">
+                    <div class="col-12 col-md-4 col-lg-3 col-sm-4 p-0"
+                        style="border-top-left-radius: 1rem !important; border-bottom-left-radius: 1rem !important;">
+                        <img src="/static/images/travel-1677347_640.jpg" class="mmmnn img-fluid" alt="">
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-6 col-sm-4 adder">
+                        <div class="text-start my-1 g-0">
+                            <h4 class="card-title fw-bold m-2">Deluxe Room City/Fort View</h4>
+                            <p class="card-text m-2">Guest up to 2</p>
+                            <p class="card-text m-2">26 sq mt</p>
+                            <p class="card-text m-2">Attached Washroom</p>
+                            <p class="card-text m-2">TV, Hair dryer, Press</p>
+                            <p class="fw-bolder text-lg-end m-4"><i class="bi bi-currency-rupee"></i> 6,350*</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3 col-sm-4 bg-success d-flex flex-column align-items-center justify-content-center text-center second"
+                        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+                        <div class="col-md-12 mb-2">
+                            <a href="#inquiry" class="btn btn-danger m-3" id="btn">ENQUIRY NOW</a>
+                        </div>
+                        <div class="col-md-12">
+                            <a href="https://wa.me/" class="btn btn-danger m-3" id="danger">WHATSAPP</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center border p-0 mb-4" style="border-radius: 1rem !important;">
+                    <div class="col-12 col-md-4 col-lg-3 col-sm-4 p-0"
+                        style="border-top-left-radius: 1rem !important; border-bottom-left-radius: 1rem !important;">
+                        <img src="/static/images/travel-1677347_640.jpg" class="mmmnn img-fluid" alt="">
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-6 col-sm-4 adder">
+                        <div class="text-start my-1 g-0">
+                            <h4 class="card-title fw-bold m-2">Deluxe Room City/Fort View</h4>
+                            <p class="card-text m-2">Guest up to 2</p>
+                            <p class="card-text m-2">26 sq mt</p>
+                            <p class="card-text m-2">Attached Washroom</p>
+                            <p class="card-text m-2">TV, Hair dryer, Press</p>
+                            <p class="fw-bolder text-lg-end m-4"><i class="bi bi-currency-rupee"></i> 6,350*</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3 col-sm-4 bg-success d-flex flex-column align-items-center justify-content-center text-center second"
+                        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+                        <div class="col-md-12 mb-2">
+                            <a href="#inquiry" class="btn btn-danger m-3" id="btn">ENQUIRY NOW</a>
+                        </div>
+                        <div class="col-md-12">
+                            <a href="https://wa.me/" class="btn btn-danger m-3" id="danger">WHATSAPP</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center border p-0 mb-4" style="border-radius: 1rem !important;">
+                    <div class="col-12 col-md-4 col-lg-3 col-sm-4 p-0"
+                        style="border-top-left-radius: 1rem !important; border-bottom-left-radius: 1rem !important;">
+                        <img src="/static/images/travel-1677347_640.jpg" class="mmmnn img-fluid" alt="">
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-6 col-sm-4 adder">
+                        <div class="text-start my-1 g-0">
+                            <h4 class="card-title fw-bold m-2">Deluxe Room City/Fort View</h4>
+                            <p class="card-text m-2">Guest up to 2</p>
+                            <p class="card-text m-2">26 sq mt</p>
+                            <p class="card-text m-2">Attached Washroom</p>
+                            <p class="card-text m-2">TV, Hair dryer, Press</p>
+                            <p class="fw-bolder text-lg-end m-4"><i class="bi bi-currency-rupee"></i> 6,350*</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3 col-sm-4 bg-success d-flex flex-column align-items-center justify-content-center text-center second"
+                        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+                        <div class="col-md-12 mb-2">
+                            <a href="#inquiry" class="btn btn-danger m-3" id="btn">ENQUIRY NOW</a>
+                        </div>
+                        <div class="col-md-12">
+                                <a href="https://wa.me/" class="btn btn-danger m-3" id="danger">WHATSAPP</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-0" style="background-color: #e1e0e086;">
+        <div class="row d-flex justify-content-center">
+            <div class="col-11">
+                <div class="swiper">
+                    <div class="slide-content">
+                        <div class=" card-wrapper swiper-wrapper">
+                            <!--CARD -->
+                            <div class="card swiper-slide mt-4 p-2 shadow rounded " style="border: none; width:100%;">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/577122177.jpg?k=d708eff1ad8a158f2581ae684bae604767d3c33bba2a637c75f185857ff70dfe&o=&hp=1"
+                                    class="cardd-imgss-top" alt="Product Image" />
+                                <div class="card-body bg-light">
+                                    <h5>Deluxe Room/Fort view</h5>
+                                    <p class="m-2"><i class="fa-solid fa-clipboard me-2"></i>47 Sq.mt</p>
+                                    <p class="m-2"><i class="fa-solid fa-wifi me-2"></i>Inclusive of WIFI</p>
+                                    <p class="m-2"><i class="bi bi-people-fill me-2"></i>Up to 4 guests</p>
+                                    <p class="m-2">
+                                        <i class="fa-solid fa-bed me-2"></i>King<a class="btn2" aria-current="page"
+                                            href="">ENQUIRY NOW</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card swiper-slide mt-4 p-2 shadow rounded " style="border: none; width:100%;">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/577122177.jpg?k=d708eff1ad8a158f2581ae684bae604767d3c33bba2a637c75f185857ff70dfe&o=&hp=1"
+                                    class="cardd-imgss-top" alt="Product Image" />
+                                <div class="card-body bg-light">
+                                    <h5>Deluxe Room/Fort view</h5>
+                                    <p class="m-2"><i class="fa-solid fa-clipboard me-2"></i>47 Sq.mt</p>
+                                    <p class="m-2"><i class="fa-solid fa-wifi me-2"></i>Inclusive of WIFI</p>
+                                    <p class="m-2"><i class="bi bi-people-fill me-2"></i>Up to 4 guests</p>
+                                    <p class="m-2">
+                                        <i class="fa-solid fa-bed me-2"></i>King<a class="btn2" aria-current="page"
+                                            href="">ENQUIRY NOW</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card swiper-slide mt-4 p-2 shadow rounded " style="border: none; width:100%;">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/577122177.jpg?k=d708eff1ad8a158f2581ae684bae604767d3c33bba2a637c75f185857ff70dfe&o=&hp=1"
+                                    class="cardd-imgss-top" alt="Product Image" />
+                                <div class="card-body bg-light">
+                                    <h5>Deluxe Room/Fort view</h5>
+                                    <p class="m-2"><i class="fa-solid fa-clipboard me-2"></i>47 Sq.mt</p>
+                                    <p class="m-2"><i class="fa-solid fa-wifi me-2"></i>Inclusive of WIFI</p>
+                                    <p class="m-2"><i class="bi bi-people-fill me-2"></i>Up to 4 guests</p>
+                                    <p class="m-2">
+                                        <i class="fa-solid fa-bed me-2"></i>King<a class="btn2" aria-current="page"
+                                            href="">ENQUIRY NOW</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card swiper-slide mt-4 p-2 shadow rounded " style="border: none; width:100%;">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/577122177.jpg?k=d708eff1ad8a158f2581ae684bae604767d3c33bba2a637c75f185857ff70dfe&o=&hp=1"
+                                    class="cardd-imgss-top" alt="Product Image" />
+                                <div class="card-body bg-light">
+                                    <h5>Deluxe Room/Fort view</h5>
+                                    <p class="m-2"><i class="fa-solid fa-clipboard me-2"></i>47 Sq.mt</p>
+                                    <p class="m-2"><i class="fa-solid fa-wifi me-2"></i>Inclusive of WIFI</p>
+                                    <p class="m-2"><i class="bi bi-people-fill me-2"></i>Up to 4 guests</p>
+                                    <p class="m-2">
+                                        <i class="fa-solid fa-bed me-2"></i>King<a class="btn2" aria-current="page"
+                                            href="">ENQUIRY NOW</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card swiper-slide mt-4 p-2 shadow rounded " style="border: none; width:100%;">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/577122177.jpg?k=d708eff1ad8a158f2581ae684bae604767d3c33bba2a637c75f185857ff70dfe&o=&hp=1"
+                                    class="cardd-imgss-top" alt="Product Image" />
+                                <div class="card-body bg-light">
+                                    <h5>Deluxe Room/Fort view</h5>
+                                    <p class="m-2"><i class="fa-solid fa-clipboard me-2"></i>47 Sq.mt</p>
+                                    <p class="m-2"><i class="fa-solid fa-wifi me-2"></i>Inclusive of WIFI</p>
+                                    <p class="m-2"><i class="bi bi-people-fill me-2"></i>Up to 4 guests</p>
+                                    <p class="m-2">
+                                        <i class="fa-solid fa-bed me-2"></i>King<a class="btn2" aria-current="page"
+                                            href="">ENQUIRY NOW</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card swiper-slide mt-4 p-2 shadow rounded " style="border: none; width:100%;">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/577122177.jpg?k=d708eff1ad8a158f2581ae684bae604767d3c33bba2a637c75f185857ff70dfe&o=&hp=1"
+                                    class="cardd-imgss-top" alt="Product Image" />
+                                <div class="card-body bg-light">
+                                    <h5>Deluxe Room/Fort view</h5>
+                                    <p class="m-2"><i class="fa-solid fa-clipboard me-2"></i>47 Sq.mt</p>
+                                    <p class="m-2"><i class="fa-solid fa-wifi me-2"></i>Inclusive of WIFI</p>
+                                    <p class="m-2"><i class="bi bi-people-fill me-2"></i>Up to 4 guests</p>
+                                    <p class="m-2">
+                                        <i class="fa-solid fa-bed me-2"></i>King<a class="btn2" aria-current="page"
+                                            href="">ENQUIRY NOW</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card swiper-slide mt-4 p-2 shadow rounded " style="border: none; width:100%;">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/577122177.jpg?k=d708eff1ad8a158f2581ae684bae604767d3c33bba2a637c75f185857ff70dfe&o=&hp=1"
+                                    class="cardd-imgss-top" alt="Product Image" />
+                                <div class="card-body bg-light">
+                                    <h5>Deluxe Room/Fort view</h5>
+                                    <p class="m-2"><i class="fa-solid fa-clipboard me-2"></i>47 Sq.mt</p>
+                                    <p class="m-2"><i class="fa-solid fa-wifi me-2"></i>Inclusive of WIFI</p>
+                                    <p class="m-2"><i class="bi bi-people-fill me-2"></i>Up to 4 guests</p>
+                                    <p class="m-2">
+                                        <i class="fa-solid fa-bed me-2"></i>King<a class="btn2" aria-current="page"
+                                            href="">ENQUIRY NOW</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card swiper-slide mt-4 p-2 shadow rounded " style="border: none; width:100%;">
+                                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/577122177.jpg?k=d708eff1ad8a158f2581ae684bae604767d3c33bba2a637c75f185857ff70dfe&o=&hp=1"
+                                    class="cardd-imgss-top" alt="Product Image" />
+                                <div class="card-body bg-light">
+                                    <h5>Deluxe Room/Fort view</h5>
+                                    <p class="m-2"><i class="fa-solid fa-clipboard me-2"></i>47 Sq.mt</p>
+                                    <p class="m-2"><i class="fa-solid fa-wifi me-2"></i>Inclusive of WIFI</p>
+                                    <p class="m-2"><i class="bi bi-people-fill me-2"></i>Up to 4 guests</p>
+                                    <p class="m-2">
+                                        <i class="fa-solid fa-bed me-2"></i>King<a class="btn2" aria-current="page"
+                                            href="">ENQUIRY NOW</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-button-next swiper-navBtn"></div>
+                    <div class="swiper-button-prev swiper-navBtn"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid mb-3 p-0">
+        <div class="card bg-light text-white">
+            <img src="/static/images/WhatsApp Image 2024-08-09 at 15.58.41_35b9bd4e.jpg" class="card-img"
+                style="object-fit: cover;">
+            <div class="card-img-overlay text-center">
+                <h3 class="card-title fw-bold">+91 7619330613 or Send</h3>
+                <h3 class="card-title fw-bold">Inquiry for Room Availability</h3>
+                <a href="#inquiry">
+                    <button type="button" class="btn btn-danger text-white" id="button">ENQUIRY
+                        NOW</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-lg mb-3 pt-5">
+        <div class="row justify-content-center d-flex align-items-center">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="img">
+                    <img src="/static/images/ai-generated-8856798_1280.webp" class="imgs pe-2" alt="">
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-6">
+                <div class="card bg-danger carder " style="height: 130px; border-radius:30px !important;">
+                    <div class="card-body d-flex justify-content-between align-items-center mx-5">
+                        <h3 class="text-white mb-0">OUR STORY</h3>
+                        <a href="{% url 'contact' %}" class="btn btn-light btnn">CONTACT US</a>
+                    </div>
+                </div>
+                <div class="text fw-bold px-5 pt-3">
+                    <p>About us details here About us details here About
+                        us details here About us details here About us
+                        details here About us details here About us details
+                        here About us details here About us details here.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-lg mt-3 p-0">
+        <div class="card mb-3 cardd">
+            <img src="/static/images/WhatsApp Image 2024-08-09 at 15.58.41_35b9bd4e.jpg" class="card-img-top" alt="...">
+            <div class="card-img-overlayy borderr p-4 mx-5 d-none d-sm-block">
+                <p><i class="bi bi-alarm"></i>1D/1N&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<i
+                        class="bi bi-person"></i>Pax:min2&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<i
+                        class="bi bi-geo-alt"></i>Srinagar</p>
+                <h5>LOVE AND PEACE HOMESTAY</h5>
+                <div class="text-start ">
+                    <p>This is about Love and Peace HomeStay<br> we are
+                        located at srinagar Brain. You<br>can book our
+                        Homestay here. This is<br>about Love and Peace
+                        HomeStay we<br>are located at srinagar Brain. You
+                        can<br>book our Homestay here.
+                    </p>
+                </div>
+                <div class="textt">
+                    <h3>Starting From</h3>
+                    <p><i class="bi bi-currency-dollar"></i>1900</p>
+                </div>
+                <div class="btn ps-0">
+                    <a href="#inquiry" class="btn btn-danger enquiry">ENQUIRY NOW</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!--JAVASCRIPT LOCAL-->
+<script src="index.js"></script>
+<script>
+    var swiper = new Swiper(".slide-content", {
+        slidesPerView: 4,
+        spaceBetween: 25,
+        loop: true,
+        centerSlide: true,
+        fade: true,
+        grabCursor: true,
+        autoplay: {
+            delay: 2500, // Adjust the delay as needed (milliseconds)
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevE1: ".swiper-button-prev",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            520: {
+                slidesPerView: 2,
+            },
+            990: {
+                slidesPerView: 3,
+            },
+            1200: {
+                slidesPerView: 4, // Ensure 4 slides are shown on larger screens
+            }
+        },
+    });
+
+</script>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+{% endblock %}
